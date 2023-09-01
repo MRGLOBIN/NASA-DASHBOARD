@@ -1,16 +1,20 @@
 const mongoose = require("mongoose");
 
-const MANGO_URL =
-  "mongodb+srv://nasa-api:123@nasa-api.zow29kl.mongodb.net/?retryWrites=true&w=majority";
-// 'mongodb+srv://NASA-SERVER-API:123@nasa-database.jdej7po.mongodb.net/?retryWrites=true&w=majority'
+require('dotenv').config()
+
+const MANGO_URL = process.env.MANGO_URL
+
 
 async function connectToMango() {
-  await mongoose.connect(MANGO_URL, {
+  await mongoose.connect(MANGO_URL, 
+    {
     useNewUrlParser: true,
+    // no longer supported
     // useFindAndModify: false,
     // useCreateIndex: true,
     useUnifiedTopology: true,
-  });
+  }
+  );
 
   console.log("connected to MangoDB");
 }

@@ -5,6 +5,7 @@ const connectToMango = require('./services/connectMango')
 const { loadPlanetsData } = require('./models/planets.model')
 const { loadLaunchSpaceX } = require('./models/launches.model')
 
+
 const PORT = process.env.PORT || 3000
 const server = createServer(app)
 
